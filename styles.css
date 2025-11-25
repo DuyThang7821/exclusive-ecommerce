@@ -8,7 +8,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Helper Classes */
 .text-red {
   color: var(--primary-color) !important;
 }
@@ -27,7 +26,6 @@ body {
   color: white;
 }
 
-/* Top Header */
 .top-header {
   background: #000;
   color: #fff;
@@ -35,7 +33,7 @@ body {
   padding: 10px 0;
 }
 
-/* Navigation */
+
 .navbar-brand {
   font-weight: 700;
   font-size: 24px;
@@ -854,4 +852,131 @@ footer a:hover {
   .social-links a {
     font-size: 16px;
   }
+}
+/* ===================================
+   FIX HORIZONTAL SCROLL & OVERFLOW
+   =================================== */
+
+/* Ngăn chặn horizontal scroll toàn trang */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Container chính - đảm bảo không vượt quá màn hình */
+.container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Fix cho các section có horizontal scroll */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Đảm bảo images không gây overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix cho product grid */
+.product-card {
+  width: 100%;
+}
+
+/* Fix cho bento grid */
+.bento-item {
+  width: 100%;
+}
+
+/* Đặc biệt fix cho các section có flex/grid gây overflow */
+@media (max-width: 767px) {
+  /* Đảm bảo tất cả columns đều nằm trong viewport */
+  .col-md-3, .col-md-6, .col-sm-6 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Fix cho product grid trên mobile */
+  .row.g-4 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .row.g-4 > [class*="col-"] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  /* Fix cho bento grid */
+  .row.g-4[style*="height: 600px"] {
+    height: auto !important;
+    overflow: hidden;
+  }
+  
+  .d-flex.gap-4 {
+    gap: 15px !important;
+  }
+}
+
+/* Fix riêng cho Flash Sales timer section */
+@media (max-width: 767px) {
+  .d-flex.align-items-end.gap-5 {
+    flex-wrap: wrap;
+    gap: 1rem !important;
+  }
+  
+  .d-flex.gap-3.text-center {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem !important;
+  }
+  
+  .d-flex.gap-3.text-center > div {
+    min-width: 50px;
+  }
+}
+
+/* Fix cho category grid */
+@media (max-width: 767px) {
+  .row.g-3 {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  
+  .col-6 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+/* Đảm bảo swiper không gây overflow */
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-banner {
+  overflow: hidden !important;
+}
+
+/* Fix cho footer layout */
+footer .container {
+  overflow: hidden;
+}
+
+/* Utility class để force không có overflow */
+.no-overflow {
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+.force-contained {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
