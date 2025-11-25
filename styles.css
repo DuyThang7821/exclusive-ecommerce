@@ -6,8 +6,20 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden; /* Ngăn scroll ngang */
 }
 
+/* Ngăn overflow cho toàn bộ page */
+html {
+  overflow-x: hidden;
+}
+
+html, body {
+  max-width: 100%;
+  position: relative;
+}
+
+/* Helper Classes */
 .text-red {
   color: var(--primary-color) !important;
 }
@@ -26,6 +38,7 @@ body {
   color: white;
 }
 
+/* Top Header */
 .top-header {
   background: #000;
   color: #fff;
@@ -33,7 +46,7 @@ body {
   padding: 10px 0;
 }
 
-
+/* Navigation */
 .navbar-brand {
   font-weight: 700;
   font-size: 24px;
@@ -48,6 +61,39 @@ body {
   padding: 7px 50px 7px 20px;
   font-size: 14px;
   width: 100%;
+}
+
+/* Mobile Menu Styling */
+.navbar-collapse {
+  background: #fff;
+}
+
+.navbar-nav {
+  padding: 10px 0;
+}
+
+.navbar-nav .nav-item {
+  padding: 5px 0;
+}
+
+.navbar-nav .nav-link {
+  padding: 10px 15px;
+}
+
+/* Navbar Layout */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 8px 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 /* Hero Section */
@@ -515,16 +561,36 @@ footer a:hover {
 
 /* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
+  /* Fix Overflow Issues */
+  body, html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
   /* Top Header */
   .top-header {
     font-size: 12px;
     padding: 8px 0;
+    width: 100%;
+    overflow-x: hidden;
   }
   
   .top-header .container {
     flex-direction: column;
     text-align: center;
     gap: 5px;
+    max-width: 100%;
+    padding: 0 15px;
   }
   
   .language-select {
@@ -534,16 +600,103 @@ footer a:hover {
   /* Navigation */
   .navbar {
     padding: 15px 0;
+    width: 100%;
+    overflow-x: hidden;
   }
   
   .navbar-brand {
     font-size: 18px;
+    flex: 1;
+  }
+  
+  .navbar .container {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  /* Hamburger menu button */
+  .navbar-toggler {
+    order: 2;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 5px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Icons container */
+  .navbar .d-flex.align-items-center.gap-3 {
+    order: 3;
+    display: flex !important;
+    align-items: center;
+    gap: 15px !important;
+    margin-left: 0;
+  }
+  
+  .navbar .d-flex.align-items-center.gap-3 i {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Hide search box in mobile navbar top */
+  .navbar .search-box {
+    display: none !important;
+  }
+  
+  /* Mobile Menu Collapse */
+  .navbar-collapse {
+    order: 4;
+    width: 100%;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+  
+  .navbar-nav {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-nav .nav-item {
+    padding: 8px 0;
+    margin: 0;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 12px 0 !important;
+    margin: 0 !important;
+    font-size: 16px;
+    display: block;
+  }
+  
+  /* Search box inside collapsed menu */
+  .navbar-collapse .search-box {
+    display: block !important;
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .navbar-collapse .search-box input {
+    width: 100%;
   }
   
   /* Hero Banner */
   .hero-banner {
     height: 250px;
     padding: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .swiper {
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
   /* Section Headings */
@@ -583,10 +736,16 @@ footer a:hover {
   /* Product Cards */
   .product-img-box {
     height: 200px;
+    max-width: 100%;
   }
   
   .product-img-box img {
     max-height: 140px;
+    max-width: 100%;
+  }
+  
+  .product-card {
+    max-width: 100%;
   }
   
   .product-card h6 {
@@ -616,6 +775,8 @@ footer a:hover {
   .music-banner {
     padding: 30px 20px;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
   
   .music-banner h1 {
@@ -625,6 +786,11 @@ footer a:hover {
   
   .music-banner .d-flex {
     justify-content: center;
+  }
+  
+  .music-banner img {
+    max-width: 100%;
+    height: auto;
   }
   
   .timer-circle {
@@ -646,6 +812,11 @@ footer a:hover {
   .bento-item {
     min-height: 200px;
     margin-bottom: 15px;
+    max-width: 100%;
+  }
+  
+  .bento-item img {
+    max-width: 100%;
   }
   
   .bento-content {
@@ -672,6 +843,15 @@ footer a:hover {
   /* Footer */
   footer {
     padding-top: 30px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  footer .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   
   footer h4 {
@@ -688,12 +868,15 @@ footer a:hover {
   footer a {
     font-size: 13px;
     margin-bottom: 10px;
+    word-wrap: break-word;
   }
   
   /* Footer Layout for Mobile - Account and Quick Link on same row */
   footer .row.g-5 {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 !important;
+    width: 100%;
   }
   
   /* Exclusive - Full width */
@@ -701,6 +884,8 @@ footer a:hover {
     width: 100%;
     order: 1;
     margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
   }
   
   /* Support - Full width */
@@ -708,6 +893,8 @@ footer a:hover {
     width: 100%;
     order: 2;
     margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
   }
   
   /* Account - Half width (left) */
@@ -715,6 +902,8 @@ footer a:hover {
     width: 50%;
     order: 3;
     margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 10px;
   }
   
   /* Quick Link - Half width (right) */
@@ -722,12 +911,20 @@ footer a:hover {
     width: 50%;
     order: 4;
     margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 0;
   }
   
   /* Download App - Full width */
   footer .row.g-5 > .col-lg-3:nth-child(5) {
     width: 100%;
     order: 5;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .email-input-group {
+    max-width: 100%;
   }
   
   .email-input-group input {
@@ -740,6 +937,7 @@ footer a:hover {
     flex-direction: row;
     align-items: flex-start;
     gap: 12px;
+    max-width: 100%;
   }
   
   .qr-code {
@@ -748,9 +946,14 @@ footer a:hover {
     flex-shrink: 0;
   }
   
+  .qr-code img {
+    max-width: 100%;
+  }
+  
   .app-buttons {
     gap: 8px;
     flex: 1;
+    max-width: calc(100% - 92px);
   }
   
   .app-buttons img {
@@ -771,6 +974,7 @@ footer a:hover {
     font-size: 12px;
     margin-top: 30px;
     padding: 12px 0;
+    width: 100%;
   }
   
   /* Buttons */
@@ -783,6 +987,7 @@ footer a:hover {
   .container {
     padding-left: 15px;
     padding-right: 15px;
+    max-width: 100%;
   }
   
   .my-5 {
@@ -793,6 +998,18 @@ footer a:hover {
   .py-5 {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+  }
+  
+  /* Fix for any col padding issues */
+  [class*="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  /* Images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -852,131 +1069,4 @@ footer a:hover {
   .social-links a {
     font-size: 16px;
   }
-}
-/* ===================================
-   FIX HORIZONTAL SCROLL & OVERFLOW
-   =================================== */
-
-/* Ngăn chặn horizontal scroll toàn trang */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-  position: relative;
-}
-
-/* Container chính - đảm bảo không vượt quá màn hình */
-.container {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-/* Fix cho các section có horizontal scroll */
-.row {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* Đảm bảo images không gây overflow */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Fix cho product grid */
-.product-card {
-  width: 100%;
-}
-
-/* Fix cho bento grid */
-.bento-item {
-  width: 100%;
-}
-
-/* Đặc biệt fix cho các section có flex/grid gây overflow */
-@media (max-width: 767px) {
-  /* Đảm bảo tất cả columns đều nằm trong viewport */
-  .col-md-3, .col-md-6, .col-sm-6 {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  /* Fix cho product grid trên mobile */
-  .row.g-4 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .row.g-4 > [class*="col-"] {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
-  /* Fix cho bento grid */
-  .row.g-4[style*="height: 600px"] {
-    height: auto !important;
-    overflow: hidden;
-  }
-  
-  .d-flex.gap-4 {
-    gap: 15px !important;
-  }
-}
-
-/* Fix riêng cho Flash Sales timer section */
-@media (max-width: 767px) {
-  .d-flex.align-items-end.gap-5 {
-    flex-wrap: wrap;
-    gap: 1rem !important;
-  }
-  
-  .d-flex.gap-3.text-center {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem !important;
-  }
-  
-  .d-flex.gap-3.text-center > div {
-    min-width: 50px;
-  }
-}
-
-/* Fix cho category grid */
-@media (max-width: 767px) {
-  .row.g-3 {
-    margin-left: -4px;
-    margin-right: -4px;
-  }
-  
-  .col-6 {
-    padding-left: 4px;
-    padding-right: 4px;
-  }
-}
-
-/* Đảm bảo swiper không gây overflow */
-.swiper {
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-banner {
-  overflow: hidden !important;
-}
-
-/* Fix cho footer layout */
-footer .container {
-  overflow: hidden;
-}
-
-/* Utility class để force không có overflow */
-.no-overflow {
-  overflow: hidden !important;
-  max-width: 100% !important;
-}
-
-.force-contained {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: hidden !important;
 }
