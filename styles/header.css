@@ -1,0 +1,143 @@
+/* Top Header */
+.top-header {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 0;
+}
+
+.language-select {
+  cursor: pointer;
+}
+
+/* Navigation */
+/* --- 3. NAVBAR --- */
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+}
+
+.nav-link {
+  color: #000 !important;
+  font-weight: 400;
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  bottom: 0;
+  left: 0;
+}
+
+.search-box {
+  background: #F5F5F5;
+  padding: 7px 12px;
+  border-radius: 4px;
+  width: 240px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  width: 85%;
+}
+
+.search-box i {
+  color: #000;
+  cursor: pointer;
+}
+/* Mobile Menu Styling */
+.navbar-collapse {
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-collapse.collapsing {
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
+
+.navbar-nav {
+  padding: 10px 0;
+}
+
+.navbar-nav .nav-item {
+  padding: 5px 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.navbar-collapse.collapsing .nav-item {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.navbar-collapse.show .nav-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-collapse.show .nav-item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.navbar-collapse.show .nav-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.navbar-collapse.show .nav-item:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.navbar-collapse.show .nav-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.navbar-nav .nav-link {
+  padding: 10px 15px;
+}
+
+/* Navbar Layout */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 8px 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler:hover {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Hamburger icon animation */
+.navbar-toggler-icon {
+  transition: all 0.3s ease;
+}
+

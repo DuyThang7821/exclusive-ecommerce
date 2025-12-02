@@ -1,0 +1,53 @@
+:root {
+  --primary-color: #DB4444;
+  --text-black: #000000;
+  --text-gray: #7D8184;
+  --bg-gray: #F5F5F5;
+  --bg-secondary: #FFFFFF;
+}
+
+body {
+  font-family: 'Poppins', regular;
+  color: var(--text-black);
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+html, body {
+  max-width: 100%;
+  position: relative;
+}
+
+/* Helper Classes */
+.text-red {
+  color: var(--primary-color) !important;
+}
+.bg-red {
+  background-color: var(--primary-color) !important;
+}
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+.btn-primary-custom:hover {
+  background-color: #c93636;
+  color: white;
+}
+
