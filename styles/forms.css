@@ -207,12 +207,6 @@
   line-height: 1.6;
 }
 
-/* Contact Form Section */
-/* =========================================
-   CONTACT PAGE STYLING - FINAL VERSION
-   ========================================= */
-
-/* Contact Information Boxes - Updated */
 .contact-info-container {
   background: #fff;
   border-radius: 4px;
@@ -232,12 +226,11 @@
   padding-bottom: 0;
 }
 
-.section-title {
+.section-title-contact {
   font-size: 16px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 16px;
-  display: block;
+  margin-top: 10px;
 }
 
 .contact-text {
@@ -261,11 +254,6 @@
   margin: 24px 0;
 }
 
-/* =========================================
-   CONTACT PAGE STYLING - FINAL VERSION
-   ========================================= */
-
-/* Contact Info Container (Left Column) */
 .contact-info-container {
   background: #fff;
   border-radius: 4px;
@@ -299,13 +287,6 @@
   text-align: center;
 }
 
-.section-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #000;
-  margin: 0;
-  display: block;
-}
 
 .contact-text {
   font-size: 14px;
@@ -370,12 +351,6 @@
   transform: rotate(90deg);
 }
 
-.section-title {
-  font-size: 16px;
-  font-weight: 500;
-  color: #000;
-  margin: 0;
-}
 
 .contact-text {
   font-size: 14px;

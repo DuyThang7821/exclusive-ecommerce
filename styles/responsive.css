@@ -544,7 +544,7 @@
   }
   
   .email-input-group {
-    max-width: 280px;
+    max-width: 168px;
     width: 100%;
     position: relative;
   }
@@ -731,16 +731,6 @@
   }
 }
 
-/* ===================================
-   PRODUCT DETAILS RESPONSIVE
-   =================================== */
-
-/* Tablet - Large Mobile (max-width: 991px) */
-/* ===================================
-   PRODUCT DETAILS RESPONSIVE
-   =================================== */
-
-/* Tablet - Large Mobile (max-width: 991px) */
 @media (max-width: 991px) {
   /* Product Gallery */
   .product-gallery {

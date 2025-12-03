@@ -66,18 +66,385 @@
   margin-bottom: 30px;
 }
 
-/* Page Hero */
 .page-hero {
-  padding: 40px 0;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+}
 
-}
 .page-hero h1 {
-  font-weight: 600;
-  margin-bottom: 10px;
+  display: none; /* Hide the default h1 */
 }
-.breadcrumb {
-  color: var(--text-gray);
+
+/* Our Story Section */
+.about-story-section {
+  padding: 80px 0;
+}
+
+.about-story-section h2 {
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.about-story-section .lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.about-story-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.about-story-image {
+  height: 609px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Stats Cards Section */
+.stats-cards-section {
+  padding: 80px 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #fff;
+  height: 100%;
+}
+
+.stat-card:hover {
+  background: #DB4444;
+  color: white;
+  border-color: #DB4444;
+  box-shadow: 0 4px 12px rgba(219, 68, 68, 0.3);
+}
+
+.stat-card.active {
+  background: #DB4444;
+  color: white;
+  border-color: #DB4444;
+}
+
+.stat-icon-circle {
+  width: 80px;
+  height: 80px;
+  background: #C1C0C1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.stat-icon-circle::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.stat-card:hover .stat-icon-circle::before,
+.stat-card.active .stat-icon-circle::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.stat-card:hover .stat-icon-circle,
+.stat-card.active .stat-icon-circle {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.stat-icon-circle i {
+  font-size: 32px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.stat-card:hover h2,
+.stat-card.active h2 {
+  color: white;
+}
+
+.stat-card p {
+  font-size: 16px;
+  margin: 0;
+  color: #000;
+}
+
+.stat-card:hover p,
+.stat-card.active p {
+  color: white;
+}
+
+/* Team Section */
+.team-section {
+  padding: 80px 0;
+}
+
+.team-section h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.team-member {
+  /* Align content under the image to the left
+     and keep the same width as the image wrapper */
+  text-align: left;
+  padding-bottom: 40px;
+}
+
+.team-member-image-wrapper {
+  width: 100%;       /* FIX: cho full theo chiều rộng của col */
+  height: 430px;
+  background: #F5F5F5;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 0 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.team-member-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.team-member h5 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.team-member .text-muted {
+  font-size: 16px;
+  color: #000 !important;
+  margin-bottom: 16px;
+}
+
+.team-member .d-flex {
+  gap: 16px;
+}
+
+.team-member .d-flex.justify-content-center {
+  justify-content: flex-start !important;
+}
+
+.team-member .d-flex a {
+  color: #000;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.team-member .d-flex a:hover {
+  color: #DB4444;
+}
+
+/* Team Slider Dots */
+.team-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.team-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #D9D9D9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-dot.active {
+  background: #DB4444;
+  border: 2px solid #DB4444;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #DB4444;
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+}
+
+.service-item {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.service-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: #C1C0C1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.service-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.service-icon-wrapper i {
+  font-size: 32px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.service-item h6 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+  text-transform: none;
+}
+
+.service-item .text-muted {
   font-size: 14px;
-  margin-bottom: 0;
+  color: #000 !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .about-story-section h2 {
+    font-size: 42px;
+  }
+  
+  .about-story-image {
+    height: 400px;
+    margin-top: 40px;
+  }
+  
+  .team-member-image-wrapper {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-story-section {
+    padding: 40px 0;
+  }
+  
+  .about-story-section h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .about-story-section .lead,
+  .about-story-section p {
+    font-size: 14px;
+  }
+  
+  .about-story-image {
+    height: 300px;
+    margin-top: 30px;
+  }
+  
+  .stats-cards-section,
+  .team-section,
+  .services-section {
+    padding: 40px 0;
+  }
+  
+  .stat-card {
+    padding: 24px 16px;
+    margin-bottom: 16px;
+  }
+  
+  .stat-icon-circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .stat-icon-circle::before {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .stat-icon-circle i {
+    font-size: 24px;
+  }
+  
+  .stat-card h2 {
+    font-size: 28px;
+  }
+  
+  .team-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .team-member-image-wrapper {
+    width: 100%;
+    max-width: 100%; 
+    height: auto;     
+    aspect-ratio: 3/4; 
+  }
+  
+  .team-member h5 {
+    font-size: 24px;
+  }
+  
+  .service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service-icon-wrapper::before {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .service-icon-wrapper i {
+    font-size: 24px;
+  }
+  
+  .service-item h6 {
+    font-size: 16px;
+  }
 }
 
